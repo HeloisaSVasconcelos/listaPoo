@@ -1,31 +1,26 @@
 
 package exercicios;
 
+package exercicios;
+
 public class Main {
     public static void main(String[] args) {
 
-        // a) O código abaixo não compila originalmente:
-        if (true) {
-            int x = 10; // x é criada dentro do bloco do 'if'
-            System.out.println("Variável x dentro do if: " + x);
-        }
+        // --- Exercício 11: Referência vs Valor (Primitivo) ---
+        int a = 10;
+        int b = a; // b recebe uma CÓPIA do valor de a
+        b = 99;    // alteramos b, mas a cópia original de 'a' permanece intacta
 
-        // System.out.println(x); // ERRO DE COMPILAÇÃO AQUI
+        // a) Imprimindo os valores para conferir
+        System.out.println("Valor de a = " + a); // Saída: 10
+        System.out.println("Valor de b = " + b); // Saída: 99
 
-        // b) Versão corrigida para funcionar:
-        int y = 20; // Declarada fora do bloco para ter um escopo maior
-        if (true) {
-            y = 30;
-        }
-        System.out.println("Variável y fora do if: " + y);
-
-        /* *
-         * O que aconteceu? O código original não compila porque a variável 'x'
-         * foi declarada dentro do bloco de chaves do 'if'.
-         * * O que é Escopo? É a região do programa onde uma variável é "visível" ou acessível. [cite: 61]
-         * No Java, uma variável local só existe dentro do bloco de código {} onde foi declarada.
-         * Assim que o programa sai do 'if', a variável 'x' é destruída da memória (Stack),
-         * por isso ela não existe na linha de baixo.
+        /* :
+         * Alterar a variável 'b' NÃO mudou o valor de 'a'.
+         * Isso acontece porque tipos primitivos em Java são passados por VALOR.
+         * Quando fizemos 'int b = a', o Java criou um novo espaço na memória (Stack)
+         * e copiou o número 10 para lá. As duas variáveis são totalmente independentes
+         * e não compartilham nenhuma ligação entre si.
          */
     }
 }
