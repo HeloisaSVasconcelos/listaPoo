@@ -4,17 +4,16 @@ public class Main {
     public static void main(String[] args) {
 
         Carro c1 = new Carro();
-        Carro c2 = new Carro();
 
         c1.marca = "Toyota";
         c1.modelo = "Corolla";
         c1.ano = 2020;
 
-        c2.marca = "Honda";
-        c2.modelo = "Civic";
-        c2.ano = 2018;
+        c1.exibir();
 
-        System.out.printf("%s %s %d\n", c1.marca, c1.modelo, c1.ano);
-        System.out.printf("%s %s %d\n", c2.marca, c2.modelo, c2.ano);
+        System.out.printf("Idade: %d\n", c1.idadeDoCarro());
+
+        // exibir() → não retorna valor (void)
+        // idadeDoCarro() → retorna valor (int)
     }
 }
