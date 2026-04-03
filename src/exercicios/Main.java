@@ -2,28 +2,19 @@ package exercicios;
 
 public class Main {
     public static void main(String[] args) {
-        // Criando o objeto conforme o enunciado
-        Carro meuCarro = new Carro("VW", "Gol", 2015);
+        // e) Criando um objeto com cada construtor
+        Cliente cli1 = new Cliente("Helo", "helos@email.com", "65 9999-9999");
+        Cliente cli2 = new Cliente("Diego", "diego@unisenai.edu.br");
+        Cliente cli3 = new Cliente("João");
 
-        // Chamando o método que recebe o objeto por referência
-        trocarModelo(meuCarro);
+        // Imprimindo os dados dos três
+        System.out.println("========== LISTA DE CLIENTES ==========");
+        cli1.exibirCliente();
+        cli2.exibirCliente();
+        cli3.exibirCliente();
+        System.out.println("=======================================");
 
-        // a) O que é impresso?
-        // Resposta: Será impresso "Fusca"
-        System.out.println("Modelo após o método: " + meuCarro.getModelo());
-
-        /* * b) EXPLICAÇÃO TEÓRICA (Ex 13b):
-         * A mudança afetou o objeto original porque, em Java, os objetos são passados
-         * por REFERÊNCIA.
-         * * O parâmetro 'c' do método trocarModelo aponta para o MESMO endereço de
-         * memória no HEAP onde o objeto 'meuCarro' está armazenado.
-         * Assim, qualquer alteração feita através de 'c' reflete-se diretamente
-         * no objeto original.
-         */
-    }
-
-    // Método solicitado no exercício
-    public static void trocarModelo(Carro c) {
-        c.setModelo("Fusca");
+        // Exibindo o total de clientes usando o atributo static
+        System.out.println("Total de clientes cadastrados: " + Cliente.totalClientes);
     }
 }
