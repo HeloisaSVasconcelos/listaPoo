@@ -1,31 +1,23 @@
 package exercicios;
 
-import java.util.ArrayList;
-
 public class Main {
     public static void main(String[] args) {
-        // Criando a lista dinâmica (Ex 3) [cite: 20, 21]
-        ArrayList<Carro> listaCarros = new ArrayList<>();
+        new Carro("Toyota", "Corolla", 2020);
+        new Carro("Honda", "Civic", 2019);
+        new Carro("VW", "Golf", 2018);
+        new Carro(); // Usando o construtor vazio
+        new Carro(); // Usando o construtor vazio
 
-        // Criando um carro com o construtor parametrizado (Ex 5/6a) [cite: 29, 30]
-        Carro c1 = new Carro("Fiat", "Uno", 2010);
+        System.out.println("Total de carros cadastrados: " + Carro.totalCarros);
 
-        // Criando um carro com o construtor padrão (Ex 6b)
-        Carro c2 = new Carro();
-
-        // Adicionando na lista [cite: 21]
-        listaCarros.add(c1);
-        listaCarros.add(c2);
-
-        // c) Imprimindo e comparando (Ex 6c) [cite: 35]
-        System.out.println("========== TESTE DE SOBRECARGA ==========");
-        for (Carro car : listaCarros) {
-            car.exibir();
-        }
-        System.out.println("==========================================");
-
-        // Comentário Ex 6c: O que muda é que o primeiro objeto já nasce com dados reais [cite: 35]
-        // enquanto o segundo nasce com valores genéricos ("Desconhecido"), oferecendo
-        // opções diferentes de inicialização dependendo da necessidade do sistema. [cite: 35]
+        /* * d) EXPLICAÇÃO TEÓRICA:
+         * Acessamos com 'Carro.totalCarros' porque o atributo é STATIC.
+         * Isso significa que ele pertence à classe como um todo, e não a um
+         * objeto individual.
+         * * Diferença:
+         * - Atributo de Instância (ex: modelo): Cada carro tem o seu próprio nome.
+         * - Atributo Static (ex: totalCarros): É um valor compartilhado. Se um
+         * carro muda o valor, muda para todos, pois todos "olham" para a mesma variável na memória.
+         */
     }
 }
