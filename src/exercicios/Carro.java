@@ -13,7 +13,7 @@ public class Carro {
         totalCarros++;
     }
 
-    // Necessário para o exercício 12: Getter e Setter de modelo
+    // Getter e Setter do modelo (necessários para o teste do Ex 13)
     public String getModelo() {
         return modelo;
     }
